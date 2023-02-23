@@ -1,0 +1,83 @@
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feedback App</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    
+    <body style="background: whitesmoke;">
+        {% include 'chatkaro/nav.html' %}
+        <div class="container text-center mt-2" style="color:black">
+            <h2 class>Welcome to ChatKaro</h2>
+            <div class="row">
+                <div class="col-lg-8" style="margin-left: 2%;">
+                    <div class="card card-block" style="width: 30rem;float:right;">
+                        <!-- <img src="{% static 'feedback_app/logo1.jpg' %}"class="img-thumbnail rounded"> -->
+                    </div>
+                </div>
+            </div><br>
+                <h5 class="text-center">Please take some time to fill out the feedback</h5>
+               
+            <div class="row text-center" style="margin-left: 10%;">
+                <div class="col-sm-10 float-start" style="font-size: xxx-large;">
+                    <form action="" method="POST">
+                        <label>
+                            {% csrf_token %}
+                            <input class="radio X-UA-Compatible" type="radio" name="fav" id=0 value="Bad">
+                            <span>&#128545</span>
+                        </label>
+                        <label>
+                            <input class="radio" type="radio" name="fav" id=1 value="Good">
+                            <span>&#128512</span>
+                        </label>
+                        <label>
+                            <input class="radio" type="radio" name="fav" id=2 value="Best">
+                            <span>&#128525</span>
+                        </label><br>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>  
+       
+         
+       
+         
+  
+    <style>
+    .bn {
+       
+        border: #6610f2;
+        background-color: transparent;
+        color: #6610f2;
+        font-size: 1.5em;
+       
+        }
+    .radio {
+      display: none;
+    }
+    .radio ~ span {
+      font-size: 3rem;
+      filter: grayscale(100);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .radio:checked ~ span {
+      filter: grayscale(0);
+      font-size: 4rem;
+    }
+    </style>
+    
+    
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    {% include 'chatkaro/nav.html '%}
+{% load social_share %}
+      <div class="container text-center mt-2">
+        <h1>Connect With Zoom Meet</h1>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">SNO</th>
+                <th scope="col">Meeting Link</th>
+                <th scope="col">Meeting Password</th>
+                <th scope="col">ShareTo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><a href="{{link}}">{{link}}</a></td>
+                <td>{{pass}}</td>
+                <td>{% post_to_telegram "Zoom Link:{{link}} Password:{{pass}}"  object_or_url %}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          
+         
+      </div>
+</body>
+</html>
